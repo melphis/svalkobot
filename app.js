@@ -6,9 +6,9 @@ var TelegramBot = require('node-telegram-bot-api'),
 	Colors = require('colors/safe'),
 // request = require('request'),
 	Svalko = require('svalko-api'),
-	User = require('./user'),
-	Cache = require('./cache'),
-	Post = require('./post');
+	User = require('./src/user'),
+	Cache = require('./src/cache'),
+	Post = require('./src/post');
 
 var svalko = new Svalko(),
 	cache = new Cache(),
@@ -28,7 +28,7 @@ function getUser(id) {
 }
 
 bot.onText(/\/last/, (msg, match) => {
-	let user = getUser(msg.from.id);
+	let user = getUser(msg.chat.id);
 
 	// TODO: Обработка несольких постов
 	svalko.loadGlagne(1, user.lastReadPstoDate)
