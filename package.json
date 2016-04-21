@@ -1,0 +1,11 @@
+{
+	"name": "svalkobot",
+	"version": "0.0.1",
+	"description": "Bot for svalko.org Telegram group",
+	"main": "app.js",
+	"dependencies": {
+		"colors": "*",
+		"node-telegram-bot-api": "*",
+		"svalko-api": "melphis/svalko-api"
+	}
+}
